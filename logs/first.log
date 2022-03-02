@@ -1,0 +1,6 @@
+In Homepage view
+<QuerySet [<Book: Physics>, <Book: Physics>, <Book: Maths>, <Book: Chemistry>, <Book: Geography>]>
+[2022-02-01 03:49:20] INFO In Homepage view
+[2022-02-01 03:49:20] INFO <QuerySet [<Book: Physics>, <Book: Physics>, <Book: Maths>, <Book: Chemistry>, <Book: Geography>]>
+[2022-02-01 03:49:30] INFO In Homepage view
+[2022-02-01 03:49:30] INFO <QuerySet [<Book: Physics>, <Book: Physics>, <Book: Maths>, <Book: Chemistry>, <Book: Geography>]>

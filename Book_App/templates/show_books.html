@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All Books</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        
+    </head>
+
+    <body>
+        <h2>All Books</h2>
+        <hr>
+
+        <table border="2" style="width:50%;" class="table table-dark table-striped">
+            <thead>
+            <tr>
+                <th>Book Id</th>
+                <th>Book Name</th>
+                <th>Book Price</th>
+                <th>Book Qty</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+            {%for book in books %}
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{book.Name}}</td>
+                <td>{{book.Price}}</td>
+                <td>{{book.Qty}}</td>
+                <td>
+                    <a href="{% url 'edit' book.id %}" class="btn btn-primary">Edit</a>&nbsp;&nbsp;
+                    <form action="{% url 'delete' book.id %}" method="delete" ><br>
+                        <input type="submit" value=" Hard Delete" class="btn btn-danger"> 
+                        <br>
+                    </form>   
+                    <form action="{% url 'soft delete' book.id%}" method ="soft delete"><br>
+                        <input type="submit" value="Soft Delete"class="btn btn-warning">           
+                    </form>
+                    
+                        
+                </td>
+
+            </tr>
+            {%endfor%}
+        </table>
+        <br>
+        <a href="{% url 'homepage' %}"class="btn btn-secondary">Home</a>
+        
+    </body>
+</html>

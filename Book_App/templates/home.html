@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <title>Welcome to Library</title>
+    
+</head>
+    <body>
+        <h2>Book Library</h2>
+        <hr>
+
+        <form action="{% url 'homepage' %}" method="post">
+            {%csrf_token%}
+            {%if single_book %}
+            Book Id = <input type="number" name="bid" value="{{single_book.id}}" readonly><br><br>
+            {%endif%}
+            Book Name = <input type="text"name="bname" value="{{single_book.Name}}" placeholder="Enter the Name"><br><br>
+            Book Price = <input type="number"name="bprice"value="{{single_book.Price}}" placeholder="Enter the Price"><br><br>
+            Book Qty = <input type="number"name="bqty" value="{{single_book.Qty}}" placeholder="Enter the Qty"><br><br>
+
+            <input type="submit" value="submit"class="btn btn-secondary">
+
+</form>
+<br>
+ 
+<a href="{% url 'show_all_books' %}" class="btn btn-secondary">Show Books</a><br><br>
+<a href="{% url 'delete-books' %}"class="btn btn-danger">Delete All Books</a><br><br>
+<a href="{% url 'json' %}"class="btn btn-danger">Restore All Data</a><br><br>
+
+
+
+
+</body>
+</html>
+
